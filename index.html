@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Silogismos Playground</title>
+	<script type='text/javascript' src='script.js' defer></script>
+	<link rel='stylesheet' type='text/css' href='styles.css'>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css'>
+	<link rel='icon' type='image/png' href='icon.png'/>
+</head>
+<body>
+
+<nav>
+	<i class='bi bi-list' id='toggleMenu'></i>
+	<ul>
+		<li><a href='#extensaoCompreensao'>Extensão e Compreensão</a></li>
+		<li><a href='#generoEspecieIndividuo'>Gênero, Espécie e Indivíduo</a></li>
+		<li><a href='#definicoes'>Definições</a></li>
+		<li><a href='#univocoEquivocoAnalogo'>Unívoco, Equívoco e Análogo</a></li>
+		<li><a href='#classificacaoJuizos1'>Classificação dos Juízos (1)</a></li>
+		<li><a href='#classificacaoJuizos2'>Classificação dos Juízos (2)</a></li>
+		<li><a href='#principiosLogicos'>Princípios Lógicos</a></li>
+		<li><a href='#proposicoesCategoricas'>Proposições Categóricas</a></li>
+		<li><a href='#tiposOposicao'>Tipos de Oposição</a></li>
+		<li><a href='#conversoes'>Conversões</a></li>
+		<li><a href='#termos'>Termos</a></li>
+		<li><a href='#figurasModos1'>Figuras e Modos Legítimos (1)</a></li>
+		<li><a href='#figurasModos2'>Figuras e Modos Legítimos (2)</a></li>
+	</ul>
+</nav>
+
+<section id='escrevaUmSilogismo'>
+	<h2>Escreva um Silogismo</h2>
+	<label for="modoExperimentacao">Ou escolha um modo e experimente-o:</label>
+	<select id="modoExperimentacao">
+		<optgroup label="Primeira Figura">
+			<option value="Barbara">Barbara</option>
+			<option value="Celarent">Celarent</option>
+			<option value="Darii">Darii</option>
+			<option value="Ferio">Ferio</option>
+		</optgroup>
+
+		<optgroup label="Segunda Figura">
+			<option value="Cesare">Cesare</option>
+			<option value="Camestres">Camestres</option>
+			<option value="Festino">Festino</option>
+			<option value="Baroco">Baroco</option>
+		</optgroup>
+
+		<optgroup label="Terceira Figura">
+			<option value="Darapti">Darapti</option>
+			<option value="Felapton">Felapton</option>
+			<option value="Disamis">Disamis</option>
+			<option value="Bocardo">Bocardo</option>
+			<option value="Datisi">Datisi</option>
+			<option value="Ferison">Ferison</option>
+		</optgroup>
+
+		<optgroup label="Quarta Figura">
+			<option value="Bamalip">Bamalip</option>
+			<option value="Calemes">Calemes</option>
+			<option value="Dimatis">Dimatis</option>
+			<option value="Fesapo">Fesapo</option>
+			<option value="Fresison">Fresison</option>
+		</optgroup>
+	</select>
+	<div>
+		<input type="text" id="premissaMaior" spellcheck="false" value="Nenhuma virtude é anti amor à verdade">
+		<input type="text" id="premissaMenor" spellcheck="false" value="Algum amor pela paz é anti amor à verdade">
+		<button id="btnConcluir">Concluir</button>
+		<p class="resultado-silogismo">Conclusão: <span id="conclusao">. . .</span></p>
+		<p class="resultado-silogismo">Figura: <span id="figura">. . .</span></p>
+		<p class="resultado-silogismo">Modo: <span id="modo">. . .</span></p>
+	</div>
+</section>
+
+<section id='extensaoCompreensao'>
+	<h2>Extensão e Compreensão</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto extensao'>Extensão</div>
+			<div draggable='true' class='objeto compreensao'>Compreensão</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Refere-se a quanto um conceito se aplica aos seres da realidade, bem como aos objetos que o termo designa. Por exemplo, o termo país designa Brasil, Angola, Portugal etc.</p>
+				<div class='local extensao'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Conjunto de propriedades, o que se pode e quanto se pode falar a respeito de algo. Por exemplo, o termo país tem as propriedades região geográfica, território físico, estado soberano etc.</p>
+				<div class='local compreensao'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='generoEspecieIndividuo'>
+	<h2>Gênero, Espécie e Indivíduo</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto genero'>Gênero</div>
+			<div draggable='true' class='objeto especie'>Espécie</div>
+			<div draggable='true' class='objeto individuo'>Indivíduo</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Termo de extensão maior e compreensão menor. Por exemplo, "Animal".</p>
+				<div class='local genero'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Termo de extensão média e compreensão média. Por exemplo, "Homem".</p>
+				<div class='local especie'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Termo de extensão mínima e compreensão máxima. Por exemplo, "Pedro".</p>
+				<div class='local individuo'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='definicoes'>
+	<h2>Definições</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto essencialista'>Essencialista</div>
+			<div draggable='true' class='objeto extensional'>Extensional</div>
+			<div draggable='true' class='objeto analitica'>Analítica</div>
+			<div draggable='true' class='objeto ostensiva'>Ostenstiva</div>
+			<div draggable='true' class='objeto contextual'>Contextual</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Definição explícita que apresenta as condições necessárias e suficientes que algo satisfaz não apenas de facto, mas que é impossível que não satisfaça. Por exemplo, água é H<sub>2</sub>O.</p>
+				<div class='local essencialista'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Definição explícita que se limita a procurar dizer o que as coisas são de fato (pela observação dos fatos), sem procurar dizer o que as coisas são necessariamente. Por exemplo, seres humanos são animais racionais. Embora isso se aplique a todos os seres humanos, ou à maioria deles, não é necessário que seja assim.</p>
+				<div class='local extensional'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Definição explícita que busca retirar o que está contido em uma palavra, seu significado. Por exemplo, solteiro é aquele que não é casado.</p>
+				<div class='local analitica'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Definição implícita onde apresentam-se casos que exemplificam a propriedade que se quer definir. Por exemplo, para definir a cor verde basta apresentar vários objectos verdes.</p>
+				<div class='local ostensiva'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Definição implícita onde apresentam-se vários contextos nos quais se usa o termo a definir. Por exemplo, podemos compreender o que é a melancolia lendo um romance que descreve uma personagem melancólica, apesar de no romance nunca se dizer explicitamente o que é a melancolia.</p>
+				<div class='local contextual'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='univocoEquivocoAnalogo'>
+	<h2>Unívoco, Equívoco e Análogo</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto univoco'>Unívoco</div>
+			<div draggable='true' class='objeto equivoco'>Equívoco</div>
+			<div draggable='true' class='objeto analogo'>Análogo</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Nome associado a um único objeto. Por exemplo, ser humano.</p>
+				<div class='local univoco'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Nome associado a mais de um objeto, sem que tais objetos possuam semelhanças entre si. Por exemplo, manga de camisa e manga fruta.</p>
+				<div class='local equivoco'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Nome associado a mais de um objeto, mas tais objetos possuem semelhanças entre si.</p>
+				<div class='local analogo'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='classificacaoJuizos1'>
+	<h2>Classificação dos Juízos (1)</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto individuais'>Individuais</div>
+			<div draggable='true' class='objeto particulares'>Particulares</div>
+			<div draggable='true' class='objeto universais'>Universais</div>
+			<div draggable='true' class='objeto afirmativos'>Afirmativos</div>
+			<div draggable='true' class='objeto negativos'>Negativos</div>
+			<div draggable='true' class='objeto infinitos'>Infinitos</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Sujeito único.</p>
+				<div class='local individuais'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Aplica-se a alguns sujeitos, mas não todos.</p>
+				<div class='local particulares'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Aplica-se a todos os sujeitos.</p>
+				<div class='local universais'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Que afirmam o predicado do sujeito.</p>
+				<div class='local afirmativos'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Que negam o predicado do sujeito: não são isso.</p>
+				<div class='local negativos'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Que afirmam a negação do predicado do sujeito: são algo, só não isso. Por exemplo, pássaros são não-mamíferos.</p>
+				<div class='local infinitos'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='classificacaoJuizos2'>
+	<h2>Classificação dos Juízos (2)</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto categoricos'>Categóricos</div>
+			<div draggable='true' class='objeto hipoteticos'>Hipotéticos</div>
+			<div draggable='true' class='objeto disjuntivos'>Disjuntivos</div>
+			<div draggable='true' class='objeto problematicos'>Problemáticos</div>
+			<div draggable='true' class='objeto assertorios'>Assertórios</div>
+			<div draggable='true' class='objeto apoditicos'>Apodíticos</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Que afirmam sem condição nenhuma o predicado do sujeito.</p>
+				<div class='local categoricos'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Que afirmam o predicado do sujeito sob uma condição.</p>
+				<div class='local hipoteticos'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Em que se afirma, alternativa e exclusivamente, um e outro predicado ou vários predicados.</p>
+				<div class='local disjuntivos'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Em que se afirma do sujeito o predicado como possível.</p>
+				<div class='local problematicos'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Em que o predicado se afirma do sujeito, mas não necessariamente.</p>
+				<div class='local assertorios'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Em que o predicado se afirma do sujeito como tendo que ser necessariamente predicado do sujeito.</p>
+				<div class='local apoditicos'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='principiosLogicos'>
+	<h2>Princípios Lógicos</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto identidade'>Princípio da Identidade</div>
+			<div draggable='true' class='objeto nao-contradicao'>Princípio da Não-Contradição</div>
+			<div draggable='true' class='objeto terceiro-excluido'>Princípio do Terceiro Excluído</div>
+			<div draggable='true' class='objeto razao-suficiente'>Princípio da Razão Suficiente ou Causalidade</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Todo objeto é idêntico a si mesmo. Não se poderia definir qualquer coisa sem este princípio. Ter um conjunto de características pertencentes a um objeto e a nenhum outro. Sem este princípio, as coisas se confundiriam e tudo seria uma coisa só. Assegura a compreensibilidade da realidade: a identidade das coisas.</p>
+				<div class='local identidade'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Uma proposição não pode ser verdadeira e falsa ao mesmo tempo. Ou é verdade que Sócrates é homem, ou é falso que Sócrates é homem.</p>
+				<div class='local nao-contradicao'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Não existe um terceiro valor-verdade além de verdadeiro ou falso, o que significa que dada uma proposição e sua negação, uma delas é necessariamente verdadeira ou falsa, não havendo outra possibilidade.</p>
+				<div class='local terceiro-excluido'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Tudo que existe possui uma explicação para sua existência, nem que tal explicação seja encontrada na própria coisa. </p>
+				<div class='local razao-suficiente'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='proposicoesCategoricas'>
+	<h2>Proposições Categóricas</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto A'>A: Todo S é P</div>
+			<div draggable='true' class='objeto E'>E: Nenhum S é P</div>
+			<div draggable='true' class='objeto I'>I: Algum S é P</div>
+			<div draggable='true' class='objeto O'>O: Algum S não é P</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Universal Afirmativa</p>
+				<div class='local A'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Universal Negativa</p>
+				<div class='local E'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Particular Afirmativa</p>
+				<div class='local I'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Particular Negativa</p>
+				<div class='local O'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='tiposOposicao'>
+	<h2>Tipos de Oposição</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto contraditorias'>Contraditórias (I-E, A-O)</div>
+			<div draggable='true' class='objeto contrarias'>Contrárias (A-E)</div>
+			<div draggable='true' class='objeto subcontrarias'>Subcontrárias (I-O)</div>
+			<div draggable='true' class='objeto subalternas'>Subalternas (A-I, E-O)</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Não podem ser verdadeiras nem falsas ao mesmo tempo.</p>
+				<div class='local contraditorias'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Não podem ser ambas verdadeiras, mas podem ser ambas falsas.</p>
+				<div class='local contrarias'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Não podem ser ambas falsas, mas podem ser ambas verdadeiras.</p>
+				<div class='local subcontrarias'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Se uma é uma coisa, a outra também é. Se só uma é uma coisa, nada se pode concluir sobre a outra.</p>
+				<div class='local subalternas'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='conversoes'>
+	<h2>Conversões</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto conversao-simples-1'>Alguns S são P</div>
+			<div draggable='true' class='objeto conversao-simples-2'>Nenhum S é P</div>
+			<div draggable='true' class='objeto conversao-limitacao'>Todo S é P</div>
+			<div draggable='true' class='objeto conversao-negacao'>Alguns S não são P</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Alguns P são S (conversão simples)</p>
+				<div class='local conversao-simples-1'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Nenhum P é S (conversão simples)</p>
+				<div class='local conversao-simples-2'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Alguns P são S (conversão por limitação)</p>
+				<div class='local conversao-limitacao'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Alguns não-P são S (conversão por negação)</p>
+				<div class='local conversao-negacao'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='termos'>
+	<h2>Termos</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto maior'>Maior</div>
+			<div draggable='true' class='objeto menor'>Menor</div>
+			<div draggable='true' class='objeto medio'>Médio</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>Termo de maior extensão que é predicado da conclusão.</p>
+				<div class='local maior'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Termo de menor extensão que é sujeito da conclusão.</p>
+				<div class='local menor'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>Termo que não aparece na conclusão, mas aparece tanto na Premissa Maior quanto na Premissa Menor, fazendo mediação para se chegar à conclusão.</p>
+				<div class='local medio'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='figurasModos1'>
+	<h2>Figuras e Modos Legítimos (1)</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto primeira-figura'>AAA (Barbara)</div>
+			<div draggable='true' class='objeto primeira-figura'>EAE (Celarent)</div>
+			<div draggable='true' class='objeto primeira-figura'>AII (Darii)</div>
+			<div draggable='true' class='objeto primeira-figura'>EIO (Ferio)</div>
+
+			<div draggable='true' class='objeto segunda-figura'>EAE (Cesare)</div>
+			<div draggable='true' class='objeto segunda-figura'>AEE (Camestres)</div>
+			<div draggable='true' class='objeto segunda-figura'>EIO (Festino)</div>
+			<div draggable='true' class='objeto segunda-figura'>AOO (Baroco)</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>
+					Primeira Figura
+					<ol>
+						<li>M-G</li>
+						<li>P-M</li>
+						<li>P-G</li>
+					</ol>
+				</p>
+				<div class='local primeira-figura'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>
+					Segunda Figura
+					<ol>
+						<li>G-M</li>
+						<li>P-M</li>
+						<li>P-G</li>
+					</ol>
+				</p>
+				<div class='local segunda-figura'></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='figurasModos2'>
+	<h2>Figuras e Modos Legítimos (2)</h2>
+	<div class='drag'>
+		<div class='conjunto-objetos local'>
+			<div draggable='true' class='objeto terceira-figura'>AAI (Darapti)</div>
+			<div draggable='true' class='objeto terceira-figura'>EAO (Felapton)</div>
+			<div draggable='true' class='objeto terceira-figura'>IAI (Disamis)</div>
+			<div draggable='true' class='objeto terceira-figura'>OAO (Bocardo)</div>
+			<div draggable='true' class='objeto terceira-figura'>AII (Datisi)</div>
+			<div draggable='true' class='objeto terceira-figura'>EIO (Ferison)</div>
+
+			<div draggable='true' class='objeto quarta-figura'>AAI (Bamalip)</div>
+			<div draggable='true' class='objeto quarta-figura'>AEE (Calemes)</div>
+			<div draggable='true' class='objeto quarta-figura'>IAI (Dimatis)</div>
+			<div draggable='true' class='objeto quarta-figura'>EAO (Fesapo)</div>
+			<div draggable='true' class='objeto quarta-figura'>EIO (Fresison)</div>
+		</div>
+		<div>
+			<div class='dupla'>
+				<p class='descricao'>
+					Terceira Figura
+					<ol>
+						<li>M-G</li>
+						<li>M-P</li>
+						<li>P-G</li>
+					</ol>
+				</p>
+				<div class='local terceira-figura'></div>
+			</div>
+			<div class='dupla'>
+				<p class='descricao'>
+					<p class='descricao'>
+						Quarta Figura
+						<ol>
+							<li>G-M</li>
+							<li>M-P</li>
+							<li>P-G</li>
+						</ol>
+				</p>
+				<div class='local quarta-figura'></div>
+			</div>
+		</div>
+	</div>
+</section>
+</section>
+</body>
+</html>
