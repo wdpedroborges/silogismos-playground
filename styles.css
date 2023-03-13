@@ -55,6 +55,7 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	align-items: center;
 	width: 30%;
 }
 
@@ -94,6 +95,7 @@ button {
 	background-color: #d6c396;
 	color: var(--primeira-cor);
 	margin-bottom: 2rem;
+	width: 100%;
 }
 
 button:hover {
@@ -234,6 +236,12 @@ ul li {
 
 .terceira .obj-funcao, .quarta .obj-funcao {
 	border: 1px solid var(--segunda-cor) !important;
+}
+
+#imgModo {
+	width: 250px;
+	text-align: center;
+	margin-top: 2rem;
 }
 
 /* Menu */

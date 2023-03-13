@@ -407,6 +407,7 @@ const realizaRaciocinio = () => {
 	let modoFinalParaBusca = `${modoFinal}-${figura}`;
 	resFigura.textContent = figura;
 	resModo.textContent = `${modoFinal} (${obtemNomeLatim(modoFinalParaBusca)})`;
+	document.getElementById('imgModo').src = `imagens/${obtemNomeLatim(modoFinalParaBusca).toLowerCase()}.png`;
 }
 
 btnConcluir.addEventListener('click', realizaRaciocinio);
@@ -477,7 +478,7 @@ modoExperimentacao.addEventListener('click', () => {
 			break;
 		case 'Calemes':
 			premissaMaior.value = 'Todo P é M';
-			premissaMenor.value = 'Todo M é S';
+			premissaMenor.value = 'Nenhum M é S';
 			break;
 		case 'Dimatis':
 			premissaMaior.value = 'Algum M é P';
